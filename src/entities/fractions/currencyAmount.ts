@@ -9,7 +9,6 @@ import toFormat from 'toformat'
 import { BigintIsh, Rounding, MaxUint256 } from '../../constants'
 
 const Big = toFormat(_Big)
-
 export class CurrencyAmount<T extends Currency> extends Fraction {
   public readonly currency: T
   public readonly decimalScale: JSBI
@@ -67,10 +66,13 @@ export class CurrencyAmount<T extends Currency> extends Fraction {
   }
 
   public toSignificant(
-    significantDigits: number = 6,
+    significantDigits: number = 7,
     format?: object,
     rounding: Rounding = Rounding.ROUND_DOWN
   ): string {
+    // console.log(super.divide(this.decimalScale))
+    // console.log(super.divide(this.decimalScale).toSignificant(1, format, rounding))
+
     return super.divide(this.decimalScale).toSignificant(significantDigits, format, rounding)
   }
 

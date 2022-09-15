@@ -84,9 +84,9 @@ describe('CurrencyAmount', () => {
       expect(amount.toSignificant(3)).toEqual('1000')
     })
     it('is correct for 0 decimals', () => {
-      const token = new Token(1, ADDRESS_ONE, 0)
-      const amount = CurrencyAmount.fromRawAmount(token, 123456)
-      expect(amount.toSignificant(4)).toEqual('123400')
+      const token = new Token(1, ADDRESS_ONE, 4)
+      const amount = CurrencyAmount.fromFractionalAmount(token, 35000000,34)
+      expect(amount.toSignificant(2)).toEqual('123400')
     })
     it('is correct for 18 decimals', () => {
       const token = new Token(1, ADDRESS_ONE, 18)
