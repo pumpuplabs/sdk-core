@@ -13,7 +13,8 @@ export declare enum SupportedChainId {
     POLYGON_MUMBAI = 80001,
     CELO = 42220,
     CELO_ALFAJORES = 44787,
-    BASE_SEPOLIA = 84532
+    BASE_SEPOLIA = 84532,
+    INK = 57073
 }
 export declare type BigintIsh = JSBI | string | number;
 export declare enum TradeType {
